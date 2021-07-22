@@ -1,0 +1,16 @@
+<div class="container pt-3">  
+  <h1><%= @task.title %></h1>
+  <p class="well"><%= @task.details %></p>
+  <%= link_to "Back to all", tasks_path  %>
+<%= link_to "Edit", edit_task_path(@task)  %>
+<%= link_to "Delete", task_path(@task), method: :delete, data: { confirm: "Are you sure?"}  %>
+  <% if @task.completed %>
+    <i class="fa fa-check-square-o"></i> Esta tarea esta completa
+  <% else %>
+    <i class="fa fa-square-o"></i> Esta tarea aún no está completa
+  <% end %>
+  <%= link_to tasks_path do %>
+    <br>
+    <i class="fa fa-history"></i> Volver a la lista
+  <% end %>
+</div>

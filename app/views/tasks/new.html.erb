@@ -1,0 +1,10 @@
+<div class="container pt-3">
+  <h1>Nueva Tarea</h1>
+  <%= render 'form', task: @task %>
+  <%= link_to tasks_path do %>
+    <i class="fa fa-history"></i> Volver a la lista
+  <% end %>
+</div>
+
+
+

@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Mis Tareas</h1>
+  <ul>
+    <% @tasks.each do |task| %>
+      
+      <li>
+          <%= link_to task.title, task_path(task) %>
+          <%= link_to task_path(task), 
+            method: :delete, 
+            data: { confirm: "Delete #{task.title}?" } do %>
+            <i class="fa fa-trash text-danger" aria-hidden="true"></i>
+          <% end %>
+      </li>
+    <% end %>
+  </ul>
+  
+  <%= link_to new_task_path do %>
+    <i class="fa fa-plus"></i> Agregar una nueva tarea
+  <% end %>
+</div>
+
